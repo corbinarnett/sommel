@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_08_011653) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "region_or_city"
+    t.text "location"
     t.text "country"
   end
 
