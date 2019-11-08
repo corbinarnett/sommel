@@ -1,4 +1,8 @@
 class WineriesController < ApplicationController
+  def index
+    @wineries = Winery.all
+  end
+  
   def new
     @winery = Winery.new
   end
