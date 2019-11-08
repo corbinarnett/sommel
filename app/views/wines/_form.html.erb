@@ -1,0 +1,20 @@
+<%= form_for(@wine) do |f| %>
+  <fieldset>
+  <br>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+
+  <%= f.label :vintage %>
+  <%= f.text_field :vintage %>
+  <br><br>
+
+  <%= f.label :varietal %>
+  <%= f.text_field :varietal %>
+  <br><br>
+
+    <%= f.submit "Add Wine" %>
+  </fieldset>
+<% end %>
+  
