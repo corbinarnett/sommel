@@ -13,6 +13,7 @@
 
     <% if logged_in? %>
       <%= link_to 'Logout', '/logout', method: :delete%>
+      <%= link_to 'Wine', wines_path %>
       <% end %>
 
     <%= yield %>
