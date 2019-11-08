@@ -14,6 +14,9 @@
   <%= f.text_field :varietal %>
   <br><br>
 
+  <%= f.label :winery_id %>
+  <%= f.collection_select(:winery_id, Winery.all, :id, :name, include_blank: true) %>
+
     <%= f.submit "Add Wine" %>
   </fieldset>
 <% end %>

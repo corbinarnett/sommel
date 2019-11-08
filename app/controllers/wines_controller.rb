@@ -9,8 +9,7 @@ class WinesController < ApplicationController
 
   def create 
     # build compared to new adds the newly created wine to the wines collection
-    @wine = current_user.wines.new(wine_params)
-    # byebug
+    @wine = current_user.wines.build(wine_params)
     if @wine.save
       redirect_to wine_path(@wine)
     else
@@ -27,6 +26,6 @@ class WinesController < ApplicationController
 
   def wine_params
     # "wine"=>{"name"=>"Pinot Noir", "vintage"=>"2014", "varietal"=>"Pinot "}
-    params.require(:wine).permit(:name, :vintage, :varietal)
+    params.require(:wine).permit(:name, :vintage, :varietal, :winery_id)
   end
 end
