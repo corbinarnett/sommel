@@ -4,8 +4,7 @@ class WineriesController < ApplicationController
   end
 
   def create 
-    @winery = current_user.wineries.build(winery_params)
-    byebug
+    @winery = Winery.new(winery_params)
     if @winery.save
       redirect_to winery_path(@winery)
     else
@@ -13,11 +12,14 @@ class WineriesController < ApplicationController
     end
   end
 
+  def show 
+    @winery = Winery.find_by(id: params[:id])
+  end
   
 
   private
 
   def winery_params
-    params.require(:winery).permit(:name, :region_or_city, :country)
+    params.require(:winery).permit(:name, :location, :country)
   end
 end
