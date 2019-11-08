@@ -4,12 +4,13 @@ class WinesController < ApplicationController
   end
 
   def new 
-    @wine = Wine.new
+    @wine = current_user.wines.build
   end
 
   def create 
     # build compared to new adds the newly created wine to the wines collection
-    @wine = Wine.new(wine_params)
+    @wine = current_user.wines.new(wine_params)
+    # byebug
     if @wine.save
       redirect_to wine_path(@wine)
     else
