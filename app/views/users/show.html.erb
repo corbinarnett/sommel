@@ -4,7 +4,7 @@
 <h3>My Wines</h3>
   <p>Display wines that user has tasting notes for</p>
     <% @user.tasting_notes.each do |tn| %>
-        <%= tn.wine.name %>
+        <%= link_to tn.wine.name, user_tasting_note_path(tn.user_id, tn) %>
 
     <% end %>
 
