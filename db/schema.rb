@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2019_11_09_045222) do
 
   create_table "wines", force: :cascade do |t|
     t.string "name"
-    t.string "type"
     t.string "grape"
     t.integer "vintage"
     t.integer "producer_id", null: false
