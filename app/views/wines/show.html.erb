@@ -1,4 +1,3 @@
 <h2> <%= @wine.name %> </h2>
-<h3> <%= @wine.varietal %> </h3>
 <h3> <%= @wine.vintage %> </h3>
-<h3><%= link_to @wine.winery.name, winery_path(@wine.winery) %><h3>
+<h3><%= link_to @wine.producer.name, producer_path(@wine.producer) %><h3>
