@@ -21,6 +21,19 @@ class TastingNotesController < ApplicationController
     end
   end
 
+  def edit
+    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
+  end
+
+  def update
+    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
+    if @tasting_note.update(tasting_note_params)
+      redirect_to user_tasting_note_path(current_user,  @tasting_note)
+    else
+      render :edit
+    end
+  end
+
 
 
 

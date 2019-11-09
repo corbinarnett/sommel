@@ -13,6 +13,7 @@
     </fieldset>
     <% end %>
 <br><br>
+
 <% if current_user && logged_in? %>
 <%= link_to 'Add a new tasting note', new_user_tasting_note_path(@user) %>
 <% end %>
