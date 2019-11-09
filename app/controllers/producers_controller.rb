@@ -9,6 +9,7 @@ class ProducersController < ApplicationController
 
   def create 
     @producer = Producer.new(producer_params)
+    byebug
     if @producer.save
       redirect_to producer_path(@producer)
     else
