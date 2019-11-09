@@ -24,6 +24,7 @@ class WinesController < ApplicationController
   end
 
 
+
   private 
 
   def wine_params
