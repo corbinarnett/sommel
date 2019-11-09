@@ -1,11 +1,12 @@
-<p>Hello from the tasting note show page</p>
-
+<br><br>
+<fieldset>
 <h2><%= link_to @tasting_note.wine.name, wine_path(@tasting_note.wine) %></h2>
-<h2><%= @tasting_note.wine.producer.name %></h2> <h2><%= @tasting_note.wine.producer.location %></h2>
-<p><%= @tasting_note.rating %></p>
-<p><%= @tasting_note.comment %></p>
+<h2>Producer: <%= @tasting_note.wine.producer.name %></h2> <h4> Location: <%= @tasting_note.wine.producer.location %></h4>
+<p>Rating: <strong><%= @tasting_note.rating %></strong></p>
+<p>Review: <%= @tasting_note.comment %></p>
 
-<% if current_user && logged_in? %>
+<% if @tasting_note.user_id == session[:user_id] %>
  <%= link_to 'Edit note',  edit_user_tasting_note_path(current_user, @tasting_note) %> 
  <%= link_to 'Delete note', user_tasting_note_path(current_user, @tasting_note), method: :delete, data: {confirm: "Are you sure?"} %>
  <% end %>
+</fieldset>
