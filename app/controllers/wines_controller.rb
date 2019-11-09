@@ -23,6 +23,19 @@ class WinesController < ApplicationController
     @wine = Wine.find_by(id: params[:id])
   end
 
+  
+  def edit 
+
+  end
+
+  def update
+
+  end
+
+  def delete
+
+  end
+
 
 
   private 

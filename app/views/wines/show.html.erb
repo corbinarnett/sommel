@@ -1,4 +1,4 @@
-
+<fieldset>
 <h2> <%= @wine.name %> </h2>
 
 <h3>Vintage: <%= @wine.vintage %> </h3>
@@ -9,9 +9,15 @@
 
 <% @wine.tasting_notes.each do |t| %>
 <fieldset>
-  <%= t.rating %>
-  <%= t.comment %>
-</fieldset>
-
-
+<p>
+  Rating: <%= t.rating %><br>
+  Comment: <%= t.comment %><br>
+  Review by: <%= t.user.username %><br> 
+</p>
+  </fieldset>
 <% end %>
+
+<% if current_user && logged_in? %>
+  <%= current_user.username %>
+  <% end %>
+  </fieldset>
