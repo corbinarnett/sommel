@@ -1,11 +1,14 @@
 <h1> <%= @producer.name %> </h1>
 <h3> <%= @producer.location %> </h3>
 
+<% @producer.wines.each do |w| %>
+  
+  <%= link_to w.name, wine_path(w) %>
 
+<% end %>
 
-
-<p>Display wineries wines</p>
 
 <p>If producer has no wines add one here</p>
+<%= link_to 'Add a wine', new_wine_path %>
 
 <%= link_to 'See all producers', producers_path %>
