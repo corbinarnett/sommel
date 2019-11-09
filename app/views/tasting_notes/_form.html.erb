@@ -7,11 +7,11 @@
 
 
   <%= f.label :rating %>
-  <%= f.number_field :rating %>
+  <%= f.number_field :rating, in: 1..5 %>
   
   <div>
   <%= f.label :comment %>
-  <%= f.text_area :comment, rows: 6 %>
+  <%= f.text_area :comment, size: "24x6" %>
   </div>
 
   <%= f.submit %>
