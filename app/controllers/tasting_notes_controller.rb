@@ -1,8 +1,8 @@
 class TastingNotesController < ApplicationController
 
   def show 
-    @user = User.find_by(id: params[:user_id])
-    @tasting_note = @user.tasting_notes.find_by(id: params[:id])
+    # @user = User.find_by(id: params[:user_id])
+    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
   end
   def new
     @tasting_note = TastingNote.new
