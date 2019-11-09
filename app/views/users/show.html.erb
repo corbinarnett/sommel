@@ -2,13 +2,18 @@
 
 
 <h3>My Wines</h3>
-  <p>Display wines that user has tasting notes for</p>
+
     <% @user.tasting_notes.each do |tn| %>
-        <%= link_to tn.wine.name, user_tasting_note_path(tn.user_id, tn) %>
+    <fieldset>
+        <h2><%= link_to tn.wine.name, wine_path(tn.wine) %></h2>
+        <%= tn.wine.producer.name %> <%= tn.wine.producer.location %>
+        <hr>
+        <%= tn.rating %> <%= tn.comment %> <%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %>
 
+    </fieldset>
     <% end %>
-
-<% if current_user %>
+<br><br>
+<% if current_user && logged_in? %>
 <%= link_to 'Add a new tasting note', new_user_tasting_note_path(@user) %>
 <% end %>
 
