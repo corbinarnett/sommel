@@ -6,7 +6,7 @@ class TastingNotesController < ApplicationController
   end
 
   def new
-    @tasting_note = TastingNote.new
+    @tasting_note = current_user.tasting_notes.build
     @wines = Wine.all
   end
 

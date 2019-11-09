@@ -12,12 +12,12 @@
   <body>
     <p class="alert"><%= alert %></p>
 
-    <% if logged_in? %>
-      <%= link_to 'Logout', '/logout', method: :delete%>
+    
+      <%= link_to 'Logout', '/users/sign_out', method: :delete%>
       <%= link_to 'Wine', wines_path %>
       <%= link_to 'Producers', producers_path %>
       <%= link_to current_user.username, root_path %>
-      <% end %>
+     
 
     <%= yield %>
   </body>
