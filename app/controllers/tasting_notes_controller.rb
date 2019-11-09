@@ -34,6 +34,13 @@ class TastingNotesController < ApplicationController
     end
   end
 
+  def destroy
+    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
+    @tasting_note.destroy
+    redirect_to user_path(current_user)
+  end
+
+
 
 
 
