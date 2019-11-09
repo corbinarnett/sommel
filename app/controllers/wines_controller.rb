@@ -28,6 +28,6 @@ class WinesController < ApplicationController
 
   def wine_params
     # "wine"=>{"name"=>"Pinot Noir", "vintage"=>"2014", "varietal"=>"Pinot "}
-    params.require(:wine).permit(:name, :grape, :vintage, :producer_id)
+    params.require(:wine).permit(:name, :vintage, :producer_id)
   end
 end
