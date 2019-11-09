@@ -1,17 +1,27 @@
+<br><br>
+<fieldset>
 <div>
 <h1> <%= @producer.name %> </h1>
-<p> <%= @producer.location %> </p>
+<p> Location: <%= @producer.location %> </p>
 </div>
+
+
 
 <% @producer.wines.each do |w| %>
   <fieldset>
   <h3><%= link_to w.name, wine_path(w) %></h3>
-  <p>Vintage: <%= w.vintage %></p>
+  <p><%= "Vintage" if w.vintage > 1900 %> <%= w.vintage if w.vintage > 1900 %></p>
   </fieldset>
 <% end %>
 
-
-<% if current_user && logged_in? %>
-<%= link_to 'Add a wine', new_wine_path %>
-<%= link_to 'See all producers', producers_path %>
+<% if @producer.wines.count == 0 %>
+<p> This Producer currently has no wines listed </p>
+  <% if logged_in? %>
+    <button><%= link_to 'Add a wine', new_wine_path %></button>
+    <button><%= link_to 'See all producers', producers_path %></button>
+  <% end %>
 <% end %>
+
+</fieldset>
+
+

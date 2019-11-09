@@ -2,7 +2,7 @@
 <fieldset>
 <h2> <%= @wine.name %> </h2>
 
-<h3>Vintage: <%= @wine.vintage %> </h3>
+<h3><%= "Vintage" if @wine.vintage > 1900 %> <%= @wine.vintage if @wine.vintage > 1900 %> </h3>
 
 <h3>Producer: <%= link_to @wine.producer.name, producer_path(@wine.producer) %><h3>
 
