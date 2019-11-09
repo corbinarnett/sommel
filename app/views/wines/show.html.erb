@@ -7,6 +7,7 @@
 
 <h1> <%= "Tasting Notes For: " if @wine.tasting_notes.count > 0 %><%= @wine.name if @wine.tasting_notes.count > 0 %></h1>
 
+
 <% @wine.tasting_notes.each do |t| %>
 <fieldset>
 <p>
@@ -14,10 +15,8 @@
   Comment: <%= t.comment %><br>
   Review by: <%= t.user.username %><br> 
 </p>
-  </fieldset>
-<% end %>
-
-<% if current_user && logged_in? %>
-  <%= current_user.username %>
+<% if t.user_id == session[:user_id] %>
+   <%= link_to "Edit Review", edit_user_tasting_note_path(current_user, t) %>
   <% end %>
   </fieldset>
+<% end %>

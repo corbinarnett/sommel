@@ -6,9 +6,11 @@
     <% @user.tasting_notes.each do |tn| %>
     <fieldset>
         <h2><%= link_to tn.wine.name, wine_path(tn.wine) %></h2>
-        <%= tn.wine.producer.name %> <%= tn.wine.producer.location %>
+        <p> Producer: <%= tn.wine.producer.name %> <br><br>
+            Location: <%= tn.wine.producer.location %> </p>
         <hr>
-        <%= tn.rating %> <%= tn.comment %> <%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %>
+        <h5> Rating: <%= tn.rating %><br><br>
+         Note: <%= tn.comment %> <%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %> </h5>
 
     </fieldset>
     <% end %>
