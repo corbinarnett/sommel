@@ -1,3 +1,12 @@
 <h1>Wine Index Page</h1>
 
+<% @wines.each do |w| %>
+  <fieldset>
+  <h3> Wine: <%= link_to w.name, wine_path(w) %></h3>
+  <%= w.vintage %>
+  <h4> Producer: <%=  w.producer.name %></h4>
+  </fieldset>
+<% end %>
+
+
 <button><%= link_to 'Add Wine', new_wine_path %></button>
