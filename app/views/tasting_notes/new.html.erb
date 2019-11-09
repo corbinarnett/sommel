@@ -2,7 +2,7 @@
   <br><br>
 
   <%= f.label :wine_id %>
-  <%= f.collection_select(:wine_id, Wine.all, :id, :name, include_blank: true) %>
+  <%= f.collection_select(:wine_id, @wine, :id, :name, include_blank: true) %>
   <br><br>
 
   <%= f.label :rating %>
