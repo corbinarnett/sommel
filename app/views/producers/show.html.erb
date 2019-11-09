@@ -1,14 +1,17 @@
+<div>
 <h1> <%= @producer.name %> </h1>
-<h3> <%= @producer.location %> </h3>
+<p> <%= @producer.location %> </p>
+</div>
 
 <% @producer.wines.each do |w| %>
-  
-  <%= link_to w.name, wine_path(w) %>
-
+  <fieldset>
+  <h3><%= link_to w.name, wine_path(w) %></h3>
+  <p>Vintage: <%= w.vintage %></p>
+  </fieldset>
 <% end %>
 
 
-<p>If producer has no wines add one here</p>
+<% if current_user && logged_in? %>
 <%= link_to 'Add a wine', new_wine_path %>
-
 <%= link_to 'See all producers', producers_path %>
+<% end %>
