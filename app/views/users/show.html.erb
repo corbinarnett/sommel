@@ -3,6 +3,11 @@
 
 <h3>My Wines</h3>
   <p>Display wines that user has tasting notes for</p>
-  <%  %>
+  <% @user.wines.all.each do |w| %>
+  <%= w.name %>
+  <% end %>
 
-<%= link_to 'Add a new tasting note', new_tasting_note_path %>
+<% if current_user %>
+<%= link_to 'Add a new tasting note', new_user_tasting_note_path(@user) %>
+<% end %>
+
