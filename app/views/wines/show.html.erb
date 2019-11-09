@@ -5,7 +5,8 @@
 
 <h3>Producer: <%= link_to @wine.producer.name, producer_path(@wine.producer) %><h3>
 
-<h1>Tasting Notes for <%= @wine.name %></h1>
+<h1> <%= "Tasting Notes For: " if @wine.tasting_notes.count > 0 %><%= @wine.name if @wine.tasting_notes.count > 0 %></h1>
+
 <% @wine.tasting_notes.each do |t| %>
 <fieldset>
   <%= t.rating %>
