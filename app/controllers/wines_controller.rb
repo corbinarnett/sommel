@@ -5,7 +5,6 @@ class WinesController < ApplicationController
 
   def new 
     @wine = Wine.new
-
   end
 
   def create 
@@ -23,22 +22,7 @@ class WinesController < ApplicationController
     @wine = Wine.find_by(id: params[:id])
   end
 
-  
-  def edit 
-
-  end
-
-  def update
-
-  end
-
-  def delete
-
-  end
-
-
-
-  private 
+private 
 
   def wine_params
     # "wine"=>{"name"=>"Pinot Noir", "vintage"=>"2014", "varietal"=>"Pinot "}
