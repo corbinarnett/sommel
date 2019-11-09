@@ -1,0 +1,12 @@
+<br><br>
+<div>
+ <% @producers.all.each do |p| %>
+    <br>
+      <fieldset>
+      <legend><strong><%= link_to p.name, producer_path(p) %></strong></legend>
+      <%= p.location %>
+      </fieldset>
+    <% end %>
+</div>
+
+<button><%= link_to 'Add a Producer', new_producer_path %></button>

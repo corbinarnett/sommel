@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WineryTest < ActiveSupport::TestCase
+class ProducersControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

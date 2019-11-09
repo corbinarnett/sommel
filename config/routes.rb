@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :producers
   root "sessions#index"
   
   #creating a new session, model object(user) has already been created
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
-  resources :wineries
   resources :tasting_notes
   resources :wines
   resources :users

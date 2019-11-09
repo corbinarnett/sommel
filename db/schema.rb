@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_011653) do
+ActiveRecord::Schema.define(version: 2019_11_09_045222) do
+
+  create_table "producers", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tasting_notes", force: :cascade do |t|
     t.integer "rating"
@@ -31,25 +38,18 @@ ActiveRecord::Schema.define(version: 2019_11_08_011653) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "wineries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "location"
-    t.text "country"
-  end
-
   create_table "wines", force: :cascade do |t|
     t.string "name"
+    t.string "type"
+    t.string "grape"
     t.integer "vintage"
-    t.string "varietal"
-    t.integer "winery_id", null: false
+    t.integer "producer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["winery_id"], name: "index_wines_on_winery_id"
+    t.index ["producer_id"], name: "index_wines_on_producer_id"
   end
 
   add_foreign_key "tasting_notes", "users"
   add_foreign_key "tasting_notes", "wines"
-  add_foreign_key "wines", "wineries"
+  add_foreign_key "wines", "producers"
 end
