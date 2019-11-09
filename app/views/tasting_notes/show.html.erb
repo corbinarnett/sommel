@@ -2,3 +2,5 @@
 
 <h2><%= link_to @tasting_note.wine.name, wine_path(@tasting_note.wine) %></h2>
 <h2><%= @tasting_note.wine.producer.name %></h2> <h2><%= @tasting_note.wine.producer.location %></h2>
+<p><%= @tasting_note.rating %></p>
+<p><%= @tasting_note.comment %></p>
