@@ -10,11 +10,11 @@ class TastingNotesController < ApplicationController
   end
 
   def create
-    @user = current_user
+    # @user = current_user
     @tasting_note = current_user.tasting_notes.build(tasting_note_params)
 
     if @tasting_note.save
-      redirect_to user_tasting_note_path(@user,  @tasting_note)
+      redirect_to user_tasting_note_path(current_user,  @tasting_note)
     else
       render :new
     end
