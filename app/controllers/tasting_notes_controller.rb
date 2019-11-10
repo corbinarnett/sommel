@@ -1,8 +1,7 @@
 class TastingNotesController < ApplicationController
-
+  before_action :set_tasting_note, only: [:show, :edit, :update, :destroy]
+  
   def show 
-    # @user = User.find_by(id: params[:user_id])
-    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
   end
 
   def new
@@ -22,11 +21,9 @@ class TastingNotesController < ApplicationController
   end
 
   def edit
-    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
   end
 
   def update
-    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
     if @tasting_note.update(tasting_note_params)
       redirect_to user_tasting_note_path(current_user,  @tasting_note)
     else
@@ -35,7 +32,6 @@ class TastingNotesController < ApplicationController
   end
 
   def destroy
-    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
     @tasting_note.destroy
     redirect_to user_path(current_user)
   end
@@ -50,6 +46,11 @@ class TastingNotesController < ApplicationController
   def tasting_note_params
     # "tasting_note"=>{"wine_id"=>"", "rating"=>"", "comment"=>""}
     params.require(:tasting_note).permit(:wine_id, :rating, :comment)
+  end
+
+  def set_tasting_note
+    @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
+    redirect_to user_path(current_user) if !@tasting_note
   end
 
   

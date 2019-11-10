@@ -1,4 +1,6 @@
 class ProducersController < ApplicationController
+  before_action :set_producer, only: [:show]
+  
   def index
     @producers = Producer.all
   end
@@ -18,7 +20,6 @@ class ProducersController < ApplicationController
   end
 
   def show 
-    @producer = Producer.find_by(id: params[:id])
   end
   
 
@@ -26,5 +27,10 @@ class ProducersController < ApplicationController
 
   def producer_params
     params.require(:producer).permit(:name, :location)
+  end
+
+  def set_producer
+    @producer = Producer.find_by(id: params[:id])
+    redirect_to producers_path if !@producer
   end
 end

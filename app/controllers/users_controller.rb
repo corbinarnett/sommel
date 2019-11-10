@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
   skip_before_action :require_login, only: [:new, :create]
 
   def new 
@@ -18,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
   end
 
 
@@ -27,5 +27,10 @@ class UsersController < ApplicationController
   def user_params
     # "user"=>{"username"=>"corbintest", "email"=>"corbin@test.com", "password"=>"password"}
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find_by(id: params[:id])
+    redirect_to user_path(current_user) if @user != current_user
   end
 end

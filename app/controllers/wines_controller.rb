@@ -1,5 +1,6 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [:show]
+  
   def index 
     @wines = Wine.all
   end
@@ -9,7 +10,6 @@ class WinesController < ApplicationController
   end
 
   def create 
-    # build compared to new adds the newly created wine to the wines collection
     @wine = Wine.new(wine_params)
     # byebug
     if @wine.save
@@ -20,13 +20,12 @@ class WinesController < ApplicationController
   end
 
   def show
-    # @wine = Wine.find_by(id: params[:id])
   end
 
 private 
 
   def wine_params
-    # "wine"=>{"name"=>"Pinot Noir", "vintage"=>"2014", "varietal"=>"Pinot "}
+    # "wine"=>{"name"=>"Pinot Noir", "vintage"=>"2014"}
     params.require(:wine).permit(:name, :vintage, :producer_id)
   end
 
