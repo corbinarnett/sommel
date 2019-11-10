@@ -4,6 +4,11 @@ class WinesController < ApplicationController
   end
 
   def new 
+    if logged_in?
+    
+    else
+      redirect_to login_path
+    end
     @wine = Wine.new
   end
 
