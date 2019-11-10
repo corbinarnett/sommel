@@ -12,12 +12,20 @@
   <body>
 
     <% if logged_in? %>
-      <%= link_to 'Logout', '/logout', method: :delete%>
-      <%= link_to 'Wine', wines_path %>
-      <%= link_to 'Producers', producers_path %>
-      <%= link_to current_user.username, root_path %>
-      <% end %>
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="logo" > <%= link_to 'Sommel', root_path %> </a>
+       <ul class="nav navbar-nav ml-auto">  
+        <a class='nav-link'><%= link_to current_user.username, root_path %></a>  
+        <a class='nav-link'><%= link_to 'Wine', wines_path %></a>
+        <a class='nav-link'><%= link_to 'Producers', producers_path %></a>
+        <a class="nav-link" ><%= link_to 'Logout', '/logout', method: :delete%></button>
+        </ul>
+      </nav>
+    <% end %>
 
+    <div class='container'>
     <%= yield %>
+    </div>
   </body>
 </html>
