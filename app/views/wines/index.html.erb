@@ -3,7 +3,7 @@
 <% @wines.each do |w| %>
   <fieldset>
   <h3><%= link_to w.name, wine_path(w) %></h3>
-  <%= w.vintage %>
+  <h4><%= "Vintage: " if w.vintage > 1900 %><%= w.vintage if w.vintage > 1900 %></h4>
   <h4> Producer: <%=  w.producer.name %></h4>
   <p><%= "Number of Reviews: " if w.tasting_notes.count > 0 %><%= w.tasting_notes.count if w.tasting_notes.count > 0 %><p>
   </fieldset>
