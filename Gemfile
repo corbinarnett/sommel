@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
  gem 'omniauth-github'
  gem 'dotenv-rails'
 
- gem 'bootstrap', '~> 4.0.0'
+ gem 'bootstrap', '~> 4.3.1'
  gem 'jquery-rails'
 
 # Use Active Storage variant
