@@ -1,6 +1,6 @@
 class TastingNotesController < ApplicationController
   before_action :set_tasting_note, only: [:show, :edit, :update, :destroy]
-  
+
   def show 
   end
 
@@ -10,7 +10,6 @@ class TastingNotesController < ApplicationController
   end
 
   def create
-    # @user = current_user
     @tasting_note = current_user.tasting_notes.build(tasting_note_params)
 
     if @tasting_note.save
@@ -38,9 +37,6 @@ class TastingNotesController < ApplicationController
 
 
 
-
-
-
   private
 
   def tasting_note_params
@@ -52,8 +48,4 @@ class TastingNotesController < ApplicationController
     @tasting_note = current_user.tasting_notes.find_by(id: params[:id])
     redirect_to user_path(current_user) if !@tasting_note
   end
-
-  
-
-  
 end

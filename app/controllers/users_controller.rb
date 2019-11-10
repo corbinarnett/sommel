@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find_by(id: params[:id])
+    # redirect_to current user, if the user set is not the current user.  Protects against going to random users show page via url.
     redirect_to user_path(current_user) if @user != current_user
   end
 end

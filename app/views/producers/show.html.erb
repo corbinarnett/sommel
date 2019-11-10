@@ -16,10 +16,8 @@
 
 <% if @producer.wines.count == 0 %>
 <p> This Producer currently has no wines listed </p>
-  <% if logged_in? %>
     <button><%= link_to 'Add a wine', new_wine_path %></button>
     <button><%= link_to 'See all producers', producers_path %></button>
-  <% end %>
 <% end %>
 
 </fieldset>
