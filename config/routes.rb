@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/auth/:provider/callback' => 'sessions#oauth_login'
+
   resources :users, only: [:create, :show] do
     resources :tasting_notes
   end
