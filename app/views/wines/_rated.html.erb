@@ -1,0 +1,15 @@
+<%= link_to '+ Add Wine', new_wine_path, class: 'btn btn-primary' %>
+
+</div>
+
+<br><br>
+
+<div class='list-group container'>
+  <% @wines.each do |w| %>
+    <div class='list-group-item list-group-item-action flex-column align-items-start d-flex w-100 justify-content-between'>
+      <h3><%= link_to w.name, wine_path(w) %></h3>
+      <h4><%= "Vintage: " if w.vintage > 1900 %><%= w.vintage if w.vintage > 1900 %></h4>
+      <h4> Producer: <%= link_to w.producer.name, producer_path(w.producer) %></h4>
+      <h6><%= "Number of Reviews: " if w.tasting_notes.count > 0 %><%= w.tasting_notes.count if w.tasting_notes.count > 0 %><p>
+    </div>
+  <% end %>

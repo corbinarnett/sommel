@@ -5,6 +5,10 @@ class WinesController < ApplicationController
     @wines = Wine.all
   end
 
+  def rated
+    @wines = Wine.rated
+  end
+
   def new 
     @wine = Wine.new
   end

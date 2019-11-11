@@ -1,0 +1,7 @@
+<div class='nav flex-column'>
+      <h2> <%= @wine.name %> </h2>
+      <h5><%= "Vintage" if @wine.vintage > 1900 %> <%= @wine.vintage if @wine.vintage > 1900 %> </h5>
+      <h5>Producer: <%= link_to @wine.producer.name, producer_path(@wine.producer) %></h5>
+      <h5><%= "This wine currently has no tasting notes." if @wine.tasting_notes.count == 0 %></h5>
+      <h5><%= link_to '+ Add Tasting Note', new_user_tasting_note_path(current_user) if @wine.tasting_notes.count == 0%></h5>
+  </div>

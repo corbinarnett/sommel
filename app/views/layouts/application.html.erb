@@ -19,6 +19,7 @@
           <%= link_to current_user.username, root_path, class: "btn text-white" %>
           <%= link_to 'wine', wines_path, class: "btn text-white" %>
           <%= link_to 'producers', producers_path, class: "btn text-white" %>
+          <%= link_to 'most reviewed', rated_wines_path, class: "btn text-white" %>
           <%= link_to 'logout', '/logout', method: :delete, class: "btn text-white"%>
         </ul>
       </nav>

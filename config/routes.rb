@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     resources :tasting_notes
   end
 
+  resources :wines do
+    collection do
+      get 'rated'
+    end
+  end
+
   resources :producers
   root "sessions#index"
   
