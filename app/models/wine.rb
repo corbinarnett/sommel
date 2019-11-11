@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   has_many :tasting_notes
-  # has_many :users, through: :tasting_notes
+  has_many :users, through: :tasting_notes
   belongs_to :producer
 
   validates :name, presence: true
