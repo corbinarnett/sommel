@@ -3,6 +3,7 @@
 
     <%= render 'show_nav' %>
 
+
     <h2><%= "Tasting Notes For: " if @wine.tasting_notes.count > 0 %><%= @wine.name if @wine.tasting_notes.count > 0 %></h2><br>
         
      <div class="list-group">
@@ -11,6 +12,7 @@
          <p class='text-right'>Review by: <%= t.user.username %></p> 
          <h4><%= t.comment %></h4><br>
          <button class='btn btn-primary disabled'>Rating: <%= t.rating %>/5</button>
+         
           
            <% if t.user_id == session[:user_id] %>
              <%= link_to "Edit", edit_user_tasting_note_path(current_user, t) %>
@@ -20,8 +22,6 @@
          <br><br>
        </div>
        <% end %>
+
      </div>
-
-
-
 </div>
