@@ -14,12 +14,12 @@
     <% if logged_in? %>
      
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="logo" > <%= link_to 'Sommel', root_path, class: "btn text-white" %> </a>
+      <%= link_to 'Sommel', root_path, class: "logo text-white btn" %>
        <ul class="nav navbar-nav ml-auto">  
           <%= link_to current_user.username, root_path, class: "btn text-white" %>
-          <%= link_to 'Wine', wines_path, class: "btn text-white" %>
-          <%= link_to 'Producers', producers_path, class: "btn text-white" %>
-          <%= link_to 'Logout', '/logout', method: :delete, class: "btn text-white"%>
+          <%= link_to 'wine', wines_path, class: "btn text-white" %>
+          <%= link_to 'producers', producers_path, class: "btn text-white" %>
+          <%= link_to 'logout', '/logout', method: :delete, class: "btn text-white"%>
         </ul>
       </nav>
 

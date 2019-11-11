@@ -1,13 +1,16 @@
+<div class="jumbotron">
+<h2>Sign up</h2><br>
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
+  <h4><%= f.label :username %></h4>
   <%# required:true does not protect on the backend %>
-  <%= f.text_field :username   %>
-  
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  
-  <%= f.submit "Sign Up" %>
+  <%= f.text_field :username, class: 'form-control col-lg-4'    %>
+  <br>
+  <h4><%= f.label :email %></h4>
+  <%= f.email_field :email, class: 'form-control col-lg-4'  %>
+  <br>
+  <h4><%= f.label :password %></h4>
+  <%= f.password_field :password, class: 'form-control col-lg-4'  %>
+  <br>
+  <%= f.submit "Sign Up", class: "btn btn-primary " %>
 <% end %>
+<div>
