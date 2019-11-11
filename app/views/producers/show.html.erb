@@ -1,25 +1,29 @@
 <br><br>
-<fieldset>
-<div>
-<h1> <%= @producer.name %> </h1>
-<p> Location: <%= @producer.location %> </p>
-</div>
+<div class='container'>
+  <div class='nav flex-column'>
+    <h1> <%= @producer.name %> </h1>
+    <p> Location: <%= @producer.location %> </p>
+  </div>
+
 
 
 
 <% @producer.wines.each do |w| %>
-  <fieldset>
-  <h3><%= link_to w.name, wine_path(w) %></h3>
-  <p><%= "Vintage" if w.vintage > 1900 %> <%= w.vintage if w.vintage > 1900 %></p>
-  </fieldset>
+  <div class="list-group">
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <h3><%= link_to w.name, wine_path(w) %></h3>
+      <p><%= "Vintage" if w.vintage > 1900 %> <%= w.vintage if w.vintage > 1900 %></p>
+    </div>
+  </div>
 <% end %>
 
 <% if @producer.wines.count == 0 %>
 <p> This Producer currently has no wines listed </p>
-    <button><%= link_to 'Add a wine', new_wine_path %></button>
-    <button><%= link_to 'See all producers', producers_path %></button>
+    <%= link_to 'Add a wine', new_wine_path, class: 'btn btn-primary' %>
+    <%= link_to 'See all producers', producers_path, class: 'btn btn-primary' %>
 <% end %>
+</div>
 
-</fieldset>
+
 
 

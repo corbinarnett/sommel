@@ -17,7 +17,8 @@
 
             <div class='nav justify-content-between'>
                 <h5 class='btn btn-primary disabled'> Rating: <%= tn.rating %>/5</h5>
-                <h5><%= tn.comment %> <%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %> </h5>
+                <h5><%= tn.comment %> </h5>
+                <h5 class='text-right'><%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %></h5>
             </div>
         </div>
         <% end %>

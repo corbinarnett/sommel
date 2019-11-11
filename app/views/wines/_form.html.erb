@@ -3,18 +3,18 @@
       <br>
 
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control col-lg-4' %>
+      <%= f.text_field :name, class: 'form-control' %>
       <br><br>
 
       <%= f.label :vintage %>
-      <%= f.text_field :vintage, class: 'form-control col-lg-4' %>
+      <%= f.text_field :vintage, class: 'form-control' %>
       <br><br>
 
 
       <%= f.label :producer_id %>
       <%= f.collection_select(:producer_id, Producer.all, :id, :name, include_blank: true) %>
 
-        <%= f.submit "Add Wine" %>
+        <%= f.submit "Add Wine", class: 'btn btn-primary' %>
       
     <% end %>
   
