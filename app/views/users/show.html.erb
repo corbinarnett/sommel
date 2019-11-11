@@ -16,7 +16,7 @@
                 <p class='card-text'>Location: <%= tn.wine.producer.location %></p> 
 
             <div class='nav justify-content-between'>
-                <h5 class='btn btn-primary'> Rating: <%= tn.rating %>/5</h5>
+                <h5 class='btn btn-primary disabled'> Rating: <%= tn.rating %>/5</h5>
                 <h5><%= tn.comment %> <%= link_to 'Go to note', user_tasting_note_path(tn.user_id, tn) %> </h5>
             </div>
         </div>

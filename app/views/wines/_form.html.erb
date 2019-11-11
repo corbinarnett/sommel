@@ -1,20 +1,23 @@
 <%= form_for @wine do |f| %>
-  <fieldset>
-  <br>
+      
+      <br>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br><br>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control col-lg-4' %>
+      <br><br>
 
-  <%= f.label :vintage %>
-  <%= f.text_field :vintage %>
-  <br><br>
+      <%= f.label :vintage %>
+      <%= f.text_field :vintage, class: 'form-control col-lg-4' %>
+      <br><br>
 
 
-  <%= f.label :producer_id %>
-  <%= f.collection_select(:producer_id, Producer.all, :id, :name, include_blank: true) %>
+      <%= f.label :producer_id %>
+      <%= f.collection_select(:producer_id, Producer.all, :id, :name, include_blank: true) %>
 
-    <%= f.submit "Add Wine" %>
-  </fieldset>
-<% end %>
+        <%= f.submit "Add Wine" %>
+      
+    <% end %>
+  
+
+
   
