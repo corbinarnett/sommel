@@ -1,12 +1,6 @@
 <div class='container'>
-    <br>
-    <h1> My Tasting Notes </h1>
-    <br><br>
-    <div class='nav justify-content-between'>
-        
-        <%= link_to '+ Add New Tasting Note', new_user_tasting_note_path(@user), class: 'btn btn-primary' %>
-    </div>
-    <br>
+
+    <%= render 'header' %>
 
     <div class='card'>
         <% @user.tasting_notes.each do |tn| %>

@@ -1,0 +1,4 @@
+<% if @tasting_note.user_id == session[:user_id] %>
+      <%= link_to 'Edit note',  edit_user_tasting_note_path(current_user, @tasting_note) %> 
+      <%= link_to 'Delete note', user_tasting_note_path(current_user, @tasting_note), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>

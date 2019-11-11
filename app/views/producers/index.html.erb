@@ -1,16 +1,15 @@
 <br><br>
-
 <div class='nav justify-content-between container'>
-<h1>All Producers</h1> 
-<%= link_to '+ Add a Producer', new_producer_path, class: 'btn btn-primary' %>
+  <h1>All Producers</h1> 
+  <%= link_to '+ Add a Producer', new_producer_path, class: 'btn btn-primary' %>
 </div>
-<div class='list-group container'>
- <% @producers.all.each do |p| %>
-    <br>
-      <div class='list-group-item list-group-item-action flex-column align-items-start d-flex w-100 justify-content-between'>
-      <h3><%= link_to p.name, producer_path(p) %></h3>
-      <%= p.location %>
-      </div>
+  <div class='list-group container'>
+    <% @producers.all.each do |p| %>
+        <br>
+        <div class='list-group-item list-group-item-action flex-column align-items-start d-flex w-100 justify-content-between'>
+          <h3><%= link_to p.name, producer_path(p) %></h3>
+          <%= p.location %>
+        </div>
     <% end %>
-</div>
+  </div>
 

@@ -5,9 +5,6 @@
     <p> Location: <%= @producer.location %> </p>
   </div>
 
-
-
-
 <% @producer.wines.each do |w| %>
   <div class="list-group">
     <div class="list-group-item list-group-item-action flex-column align-items-start">
@@ -17,11 +14,11 @@
   </div>
 <% end %>
 
-<% if @producer.wines.count == 0 %>
-<p> This Producer currently has no wines listed </p>
-    <%= link_to 'Add a wine', new_wine_path, class: 'btn btn-primary' %>
-    <%= link_to 'See all producers', producers_path, class: 'btn btn-primary' %>
-<% end %>
+  <% if @producer.wines.count == 0 %>
+    <p> This Producer currently has no wines listed </p>
+      <%= link_to 'Add a wine', new_wine_path, class: 'btn btn-primary' %>
+      <%= link_to 'See all producers', producers_path, class: 'btn btn-primary' %>
+  <% end %>
 </div>
 
 
