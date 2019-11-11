@@ -10,6 +10,7 @@ class TastingNotesController < ApplicationController
   end
 
   def create
+    #build new tasting_note instance for current user
     @tasting_note = current_user.tasting_notes.build(tasting_note_params)
 
     if @tasting_note.save
