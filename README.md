@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Sommel
 
-Things you may want to cover:
+Sommel is a Rails MVC web-application to log your favorite wines, add reviews/tasting-notes and discover what bottle to check out next.
 
-* Ruby version
+## Installation
 
-* System dependencies
+If you want to demo Sommel, feel free to fork and clone this repo.
 
-* Configuration
+$ bundle install
 
-* Database creation
+$ rails db:migrate
 
-* Database initialization
+$ rails db:seed
 
-* How to run the test suite
+$ rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
 
-* Deployment instructions
+Bug reports and pull requests are welcome on GitHub at https://github.com/corbinarnett/sommel. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* ...
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the TravelLeisure project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/corbinarnett/sommel/blob/master/CODE_OF_CONDUCT.md).

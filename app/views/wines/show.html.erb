@@ -4,7 +4,7 @@
     <%= render 'show_nav' %>
 
 
-    <h2><%= "Tasting Notes For: " if @wine.tasting_notes.count > 0 %><%= @wine.name if @wine.tasting_notes.count > 0 %></h2><br>
+    <h2><%= "Reviews For: " if @wine.tasting_notes.count > 0 %><%= @wine.name if @wine.tasting_notes.count > 0 %></h2><br>
         
      <div class="list-group">
        <% @wine.tasting_notes.each do |t| %>

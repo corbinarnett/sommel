@@ -8,7 +8,7 @@ class Wine < ApplicationRecord
   validates :vintage, numericality: {greater_than_or_equal_to: 1900, less_than_or_equal_to: Time.now.year}
 
 
-  scope :rated, -> { joins(:tasting_notes).distinct("tasting_notes.sake_id")}
+  scope :rated, -> { joins(:tasting_notes).distinct}
 end
 
 # Wine.joins(:tasting_notes)
