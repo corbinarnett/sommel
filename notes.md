@@ -12,7 +12,7 @@
 https://stackoverflow.com/questions/26581269/how-do-i-create-a-link-route-directly-to-a-scope
 
 
-Add Reviewed By In Wine#show
+Add Reviewed By In Wine#show view
 <% @wine.reviewers.each do |r| 
    <%= r.username %>
       <% end %>

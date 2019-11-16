@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "sessions#index"
+
   get '/auth/:provider/callback' => 'sessions#oauth_login'
 
   resources :users, only: [:create, :show] do
@@ -12,9 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :producers
-  root "sessions#index"
-  
   #creating a new session, model object(user) has already been created
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
+  resources :producers
   resources :tasting_notes
   resources :wines
   resources :users
